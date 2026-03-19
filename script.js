@@ -13,12 +13,11 @@ let custom = document.querySelector("#custom-percent");
 // Automatically set 15% as selected by default:
 rad1.checked = true;
 
-let inAmount = parseFloat(input.value);
-
 // Define function(s) for event listeners:
 // ===========================================================================
 
 function updateOutputs() {
+  let inAmount = parseFloat(input.value);
   let percent;
   let tipResult;
   let totResult;
@@ -36,11 +35,18 @@ function updateOutputs() {
       return;
     }
     // Get the percent by dividing by 100:
-    percent = parseFloat(custom.value) / 100;
+    if (parseFloat(custom.value) >= 1) {
+      percent = parseFloat(custom.value) / 100;
+    } else {
+      percent = parseFloat(custom.value);
+    }
   }
   // Get the tip amount and total amounts:
   tipResult = inAmount * percent;
   totResult = tipResult + inAmount;
+  // Round to 2 decimal places:
+  tipResult = Math.round(tipResult * 100) / 100;
+  totResult = Math.round(totResult * 100) / 100;
   // Write them to the DOM elements:
   tipOutput.textContent = tipResult;
   totalOutput.textContent = totResult;
