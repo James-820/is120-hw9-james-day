@@ -6,6 +6,7 @@
     <title>Tip Calculator</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    <link rel="shortcut icon" href="dollar-sign.svg" type="image/x-icon" />
   </head>
 
   <body>
@@ -14,11 +15,49 @@
     </header>
 
     <main>
-      <p>Calculator placeholder.</p>
+      <div id="calculator">
+        <div id="input-bar">
+          <label for="input">Amount:</label
+          ><input id="input" type="text" placeholder="10.00" />
+        </div>
+
+        <div id="radio-btns">
+          <div id="rad1-combo">
+            <input type="radio" name="radios" id="rad1" /><label for="rad1"
+              >15%</label
+            >
+          </div>
+          <div id="rad2-combo">
+            <input type="radio" name="radios" id="rad2" /><label for="rad2"
+              >20%</label
+            >
+          </div>
+          <div id="rad3-combo">
+            <input type="radio" name="radios" id="rad3" /><label for="rad3"
+              >25%</label
+            >
+          </div>
+          <div id="rad4-combo">
+            <input type="radio" name="radios" id="rad4" /><label for="rad4"
+              >Custom %:</label
+            ><input type="text" id="custom-percent" placeholder="10" />
+          </div>
+        </div>
+
+        <div id="result-bar">
+          <p>Tip: $<span id="tip-result">0</span></p>
+          <p>Total: $<span id="total-result">0</span></p>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <p>Footer placeholder</p>
+      <p>
+        See James Day's
+        <a href="https://james-820.github.io/is120-project2-james-day/"
+          >portfolio site</a
+        >.
+      </p>
     </footer>
   </body>
 </html>
