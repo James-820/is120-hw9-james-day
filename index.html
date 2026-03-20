@@ -18,7 +18,7 @@
       <div id="calculator">
         <div id="input-bar">
           <label for="input">Amount:</label
-          ><input id="input" type="text" placeholder="10.00" />
+          ><input id="input" type="text" placeholder="10.00" size="10" />
         </div>
 
         <div id="radio-btns">
@@ -40,13 +40,18 @@
           <div id="rad4-combo">
             <input type="radio" name="radios" id="rad4" /><label for="rad4"
               >Custom %:</label
-            ><input type="text" id="custom-percent" placeholder="10" />
+            ><br /><input
+              type="text"
+              id="custom-percent"
+              placeholder="10 or 0.10"
+              size="10"
+            />
           </div>
         </div>
 
         <div id="result-bar">
-          <p>Tip: $<span id="tip-result">0</span></p>
-          <p>Total: $<span id="total-result">0</span></p>
+          <p>Tip: $<span id="tip-result">--</span></p>
+          <p>Total: $<span id="total-result">--</span></p>
         </div>
       </div>
     </main>

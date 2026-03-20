@@ -20,7 +20,7 @@ function updateOutputs() {
   let inAmount = parseFloat(input.value);
   let percent;
   let tipResult;
-  let totResult;
+  let totalResult;
   // Determine the checked button:
   if (rad1.checked) {
     percent = 0.15;
@@ -43,13 +43,19 @@ function updateOutputs() {
   }
   // Get the tip amount and total amounts:
   tipResult = inAmount * percent;
-  totResult = tipResult + inAmount;
+  totalResult = tipResult + inAmount;
+  // If it's NaN, just put "--":
+  if (Number.isNaN(tipResult) || Number.isNaN(totalResult)) {
+    tipOutput.textContent = "--";
+    totalOutput.textContent = "--";
+    return;
+  }
   // Round to 2 decimal places:
   tipResult = Math.round(tipResult * 100) / 100;
-  totResult = Math.round(totResult * 100) / 100;
+  totalResult = Math.round(totalResult * 100) / 100;
   // Write them to the DOM elements:
   tipOutput.textContent = tipResult;
-  totalOutput.textContent = totResult;
+  totalOutput.textContent = totalResult;
 }
 
 // Add event listeners:
