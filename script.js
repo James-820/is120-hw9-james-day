@@ -45,7 +45,7 @@ function updateOutputs() {
   tipResult = inAmount * percent;
   totalResult = tipResult + inAmount;
   // If it's NaN, just put "--":
-  if (Number.isNaN(tipResult) || Number.isNaN(totalResult)) {
+  if (Number.isNaN(tipResult) || Number.isNaN(totalResult) || inAmount < 0) {
     tipOutput.textContent = "--";
     totalOutput.textContent = "--";
     return;
